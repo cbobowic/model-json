@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createTheme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 import 'typeface-lato';
+import ReactGA from 'react-ga4';
 
 const theme = createTheme({
   typography: {
@@ -24,6 +25,7 @@ export default theme;
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+ReactGA.initialize("G-GWKML1H4VY")
 root.render(
   <React.StrictMode>
     <App />
