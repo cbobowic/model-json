@@ -12,6 +12,7 @@ import ParametricAnalysis from "./pages/projects/ParametricAnalysis";
 import Eventify from "./pages/projects/Eventify";
 import Lewas from "./pages/projects/Lewas";
 import "./components/Scrollbar.css";
+import Error404 from "./pages/Error404";
 
 const App: React.FC = () => {
   return (
@@ -34,6 +35,7 @@ const App: React.FC = () => {
             />
             <Route path="/projects/eventify" element={<Eventify />} />
             <Route path="/projects/lewas-art-generator" element={<Lewas />} />
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </HomeButtonContainer>
         <Nav />
