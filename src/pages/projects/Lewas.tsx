@@ -25,6 +25,9 @@ function Lewas() {
       </Typography>
       <Typography
         sx={{ ...headStyle, textAlign: "center", fontSize: ["1.4rem", "2rem"] }}
+      >Information on this topic is pending approval! Please check back later.</Typography>
+      {/* <Typography
+        sx={{ ...headStyle, textAlign: "center", fontSize: ["1.4rem", "2rem"] }}
       >
         Overview
       </Typography>
@@ -237,7 +240,7 @@ function Lewas() {
           whileHover={{ scale: 1.2 }}
           sx={{ ...iconStyle, fontSize: "3rem", margin: "1rem" }}
         />
-      </a>
+      </a> */}
     </Box>
   );
 }

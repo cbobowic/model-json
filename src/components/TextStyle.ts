@@ -14,7 +14,7 @@ const paraStyle = {
   marginLeft: "8%",
   marginRight: "8%",
   textAlign: "center",
-  fontSize: "1.05rem",
+  fontSize: "1.15rem",
 };
 
 const headStyle = {

@@ -19,15 +19,15 @@ function Home() {
       }}
     >
       <Typography
-        sx={{ ...textStyle, fontSize: ["3rem", "4rem"], marginLeft: "1%" }}
+        sx={{ ...textStyle, fontSize: ["2.7rem", "4rem"], marginLeft: "1%" }}
         variant="h4"
       >
         Colden Bobowick
       </Typography>
-      <Typography sx={{ ...textStyle, lineHeight: "3" }}>
+      <Typography sx={{ ...textStyle, fontSize: ["1rem", "1.3rem"], lineHeight: "3" }}>
         Brown University '25
       </Typography>
-      <Typography sx={textStyle}>
+      <Typography sx={{...textStyle, fontSize: ["1rem", "1.3rem"],}}>
         Applied Mathematics - Computer Science
       </Typography>
     </Box>

@@ -68,7 +68,7 @@ function Contact() {
         >
           Feel free to reach out to me on any of these platforms! I always look
           forward to meeting new people, chatting about cool projects, and
-          receiving feedback!
+          receiving feedback! I am happy to provide a resume upon request.
         </Typography>
       </Box>
     </Box>

@@ -29,14 +29,12 @@ function FileInput({ onError }: FileInputProps) {
 
   useEffect(() => {
     async function loadModel() {
-      // console.log("Loading model...")
-      if (model === null) {
-        const newModel = await tf.loadGraphModel(m);
-        setModel(newModel);
-      }
+      const newModel = await tf.loadGraphModel(m);
+      setModel(newModel);
     }
 
     if (model === null) {
+      console.log("Loading model...");
       loadModel();
     }
   }, [model]);
