@@ -22,8 +22,9 @@ enum Prediction {
   IDLE,
 }
 
-function FileInput({ onError }: FileInputProps) {
+function FileInput({ onError}: FileInputProps) {
   const [model, setModel] = useState<tf.GraphModel | null>(null);
+  const [isReady, setIsReady] = useState<boolean>(false);
   const [predictions, setPredictions] = useState<number[]>([]);
   const [outputState, setOutputState] = useState<Prediction>(Prediction.IDLE);
 
@@ -36,9 +37,14 @@ function FileInput({ onError }: FileInputProps) {
     if (model === null) {
       console.log("Loading model...");
       loadModel();
+      console.log("Model loaded!");
     }
-  }, [model]);
 
+    if (model !== null && !isReady) {
+      setIsReady(true);
+    }
+
+  }, [model, isReady]);
 
   // Handles file input
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -160,8 +166,9 @@ function FileInput({ onError }: FileInputProps) {
           variant="outlined"
           color="black"
           onClick={handleButtonClick}
+          disabled = {!isReady}
         >
-          Upload File
+          { isReady ? "Upload image" : "Loading Model"}
         </Button>
       </ThemeProvider>
       <Input
