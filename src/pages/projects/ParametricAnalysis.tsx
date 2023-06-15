@@ -41,12 +41,12 @@ function ParametricAnalysis() {
         at a minimal cost.
         <br />
         <br />
-        Magnetorquers are solenoids that generate a magnetic dipole which
-        interacts with the Earth's magnetic field to position the satellite in a
+        Magnetorquers are solenoids that generate magnetic dipoles which
+        interact with the Earth's magnetic field to orient the satellite in a
         specific direction. Magnetorquers that are longer with larger radii
         produce greater dipoles, so there are many tradeoffs to consider when
-        selecting a length and radius. As Attitude Determination and Control
-        Lead, I wrote a parametric analysis in MATLAB to determine possible
+        selecting a length and radius. As the Attitude Determination and Control
+        Systems Lead, I wrote a parametric analysis in MATLAB to determine possible
         combinations of length and radius that yield the desired dipole.
       </Typography>
       <figure

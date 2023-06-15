@@ -25,9 +25,6 @@ function Lewas() {
       </Typography>
       <Typography
         sx={{ ...headStyle, textAlign: "center", fontSize: ["1.4rem", "2rem"] }}
-      >Information on this topic is pending approval! Please check back later.</Typography>
-      {/* <Typography
-        sx={{ ...headStyle, textAlign: "center", fontSize: ["1.4rem", "2rem"] }}
       >
         Overview
       </Typography>
@@ -50,7 +47,7 @@ function Lewas() {
         quality. <br />
         <br />
         LEWAS has been collecting water quality data from the Stroubles Creek
-        watershed since 2016. Since data is collected every 10-60 seconds, the
+        watershed since 2016. Because data is collected every 10-60 seconds, the
         large amounts of data are stored in a database that is not easily
         accessible to the public. The goal of this project was to improve the
         accessibility of LEWAS data in a creative way. My solution was the LEWAS
@@ -110,8 +107,8 @@ function Lewas() {
       <Typography sx={{ ...paraStyle }}>
         One piece of art that has been particularly impactful is the Salinity
         circle, shown above. The data is normalized and color-coded. Blue,
-        central points represent low salinity and green, outer points represent
-        high salinity. The circle demonstrates the dangerous salinity spikes
+        central points represent low salinity while green, outer points represent
+        high salinity. The circle demonstrates the harmful salinity spikes
         that occur particularly in the winter months due to heavy road salt
         usage and nearby construction. This piece was displayed near Stroubles
         Creek, where the data was collected.
@@ -240,7 +237,7 @@ function Lewas() {
           whileHover={{ scale: 1.2 }}
           sx={{ ...iconStyle, fontSize: "3rem", margin: "1rem" }}
         />
-      </a> */}
+      </a>
     </Box>
   );
 }

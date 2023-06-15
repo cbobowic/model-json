@@ -18,7 +18,7 @@ function Projects() {
         Projects
       </Typography>
       <Typography
-        sx={{ ...projStyle }}
+  sx={{ ...projStyle, textAlign: "center" }}
         component={m.div}
         whileHover={{ fontWeight: 800 }}
         transition={{ duration: 0.05 }}
@@ -31,7 +31,7 @@ function Projects() {
         sx={{ width: "15%", borderWidth: "1px", borderColor: "black" }}
       />
       <Typography
-        sx={{ ...projStyle }}
+        sx={{ ...projStyle, textAlign: "center" }}
         component={m.div}
         whileHover={{ fontWeight: 800 }}
         transition={{ duration: 0.05 }}
@@ -44,7 +44,7 @@ function Projects() {
         sx={{ width: "15%", borderWidth: "1px", borderColor: "black" }}
       />
       <Typography
-        sx={{ ...projStyle }}
+        sx={{ ...projStyle, textAlign: "center" }}
         component={m.div}
         whileHover={{ fontWeight: 800 }}
         transition={{ duration: 0.05 }}
@@ -57,7 +57,7 @@ function Projects() {
         sx={{ width: "15%", borderWidth: "1px", borderColor: "black" }}
       />
       <Typography
-        sx={{ ...projStyle }}
+        sx={{ ...projStyle, textAlign: "center" }}
         component={m.div}
         whileHover={{ fontWeight: 800 }}
         onClick={() => nav("/projects/lewas-art-generator")}

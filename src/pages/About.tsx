@@ -14,13 +14,13 @@ function About() {
         and Computer Science. I have experience in software development,
         computer vision, and data science research. So far, I have worked in
         Java (Maven, JUnit, and Spark), Python (pandas, NumPy, and TensorFlow),
-        TypeScript (React, Jest, Material-UI, and framer-motion), and MATLAB. I
+        TypeScript (React, Jest, Material UI, and Framer Motion), and MATLAB. I
         am passionate about making an impact at scale, so I am always looking
         for opportunities to learn as a software engineer. My work style is
         relatively detail-oriented with a focus on optimized solutions. With
         additional experience in business and entrepreneurship from the Tuck
-        Business Bridge Program at Dartmouth, I look for value that I can bring
-        to the table in any project.
+        Business Bridge Program at Dartmouth, I find the specific value I can 
+        bring to the table in any project.
       </Typography>
       <img
         aria-label="Colden Bobowick headshot"

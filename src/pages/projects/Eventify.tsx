@@ -32,7 +32,7 @@ function Eventify() {
         and genres. This information is then sent to the Ticketmaster API to
         find live events that match the user's music preference. The user also
         has the option to create their own live events, which is intended for
-        smaller, more local events. The application consists of a TypeScript
+        smaller, more local gatherings. The application consists of a TypeScript
         React frontend, a Spark Java backend proxy server, and a FireBase
         database.
       </Typography>
@@ -73,8 +73,8 @@ function Eventify() {
         I was responsible for the integration of the Spotify API on the backend
         proxy server. This involved writing a Spark API handler that retrieved
         and stored the users top artists, subsequently retreived each artist's
-        top genres, enumerated and stored the genres, and returned the five most
-        common genres to the frontend. I also wrote the frontend Spotify user
+        top genres, enumerated and stored the genres, and returned the most
+        common genres to the frontend. I also developed the frontend Spotify user
         authentification, which prompts the user to log in to Spotify and then
         sends the user's access token to the backend proxy.
       </Typography>
