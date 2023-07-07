@@ -5,7 +5,7 @@ import {
   screen,
   waitFor,
 } from "@testing-library/react";
-import FileInput from "../components/FileInput";
+import FileInput from "../components/file_upload/FileInput";
 
 beforeEach(() => {
   render(<FileInput onError={testOnError} />);

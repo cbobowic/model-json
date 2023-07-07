@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
-import theme from "./ButtonTheme";
+import { useCallback, useEffect, useState } from "react";
+import theme from "../ButtonTheme";
 import { ThemeProvider } from "@mui/material/styles";
 import * as tf from "@tensorflow/tfjs";
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
 import Alert from "@mui/material/Alert";
 import Backdrop from "@mui/material/Backdrop";
-import { model as m } from "../Constants";
-import FileUploader from "../utils/FileModelLoader";
+import { model as m } from "../../Constants";
+import FileUploader from "./FileLoader";
+import { useModelLoader } from "./ModelLoader";
 
 interface FileInputProps {
   onError: (error: Error) => void;
@@ -27,6 +28,8 @@ function FileInput({ onError }: FileInputProps) {
   const [outputState, setOutputState] = useState<ModelState>(
     ModelState.MODEL_LOADING
   );
+
+  // const { model, outputState, setOutputState } = useModelLoader();
 
   useEffect(() => {
     async function loadModel() {
@@ -49,10 +52,11 @@ function FileInput({ onError }: FileInputProps) {
     if (model !== null && outputState === ModelState.MODEL_LOADING) {
       setOutputState(ModelState.IDLE);
     }
-  }, [model, outputState, onError]);
+  }, [model, outputState]);
 
+  
   // Handles color of the output alert
-  function getColor() {
+  function getResultAlertColor() {
     switch (outputState) {
       case ModelState.FAKE:
         return "error";
@@ -66,7 +70,7 @@ function FileInput({ onError }: FileInputProps) {
   }
 
   // Handles text of the output alert
-  function getAlertText() {
+  function getResultAlertText() {
     switch (outputState) {
       case ModelState.FAKE:
         return `The model is ${(100 * predictions[0]).toFixed(
@@ -112,8 +116,8 @@ function FileInput({ onError }: FileInputProps) {
         </Backdrop>
         {(outputState === ModelState.FAKE ||
           outputState === ModelState.REAL) && (
-          <Alert aria-label="model result" severity="info" color={getColor()}>
-            {getAlertText()}
+          <Alert aria-label="model result" severity="info" color={getResultAlertColor()}>
+            {getResultAlertText()}
           </Alert>
         )}
       </Box>

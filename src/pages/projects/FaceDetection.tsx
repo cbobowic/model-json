@@ -6,7 +6,7 @@ import DownloadButton from "../../components/DownloadButton";
 import { motion as m } from "framer-motion";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { stylegan, thispersondoesnotexist } from "../../Constants";
-import FileInput from "../../components/FileInput";
+import FileInput from "../../components/file_upload/FileInput";
 import { useState } from "react";
 import Alert from "@mui/material/Alert";
 import Link from "@mui/material/Link";

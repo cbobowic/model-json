@@ -1,5 +1,5 @@
 import Resizer from "react-image-file-resizer";
-import { ModelState } from "../components/FileInput";
+import { ModelState } from "./FileInput";
 import * as tf from "@tensorflow/tfjs";
 import { useRef } from "react";
 import Input from "@mui/material/Input";
