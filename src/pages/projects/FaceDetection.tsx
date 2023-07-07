@@ -6,7 +6,7 @@ import DownloadButton from "../../components/DownloadButton";
 import { motion as m } from "framer-motion";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { stylegan, thispersondoesnotexist } from "../../Constants";
-import FileInput from "../../components/FileInput";
+import UploadImageToModel from "../../components/file_upload/UploadImageToModel";
 import { useState } from "react";
 import Alert from "@mui/material/Alert";
 import Link from "@mui/material/Link";
@@ -84,7 +84,7 @@ function FaceDetection() {
         on the client-side, it may take a few seconds to load, especially on
         mobile devices. <strong>Uploaded images are not stored or sent to any server!</strong>
       </Typography>
-      <FileInput onError={handleError} />
+      <UploadImageToModel onError={handleError} />
       <figure
         aria-label="vgg16"
         style={{

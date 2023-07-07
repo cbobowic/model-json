@@ -12,16 +12,16 @@ function HomeButtonContainer(props: any) {
   // HANDLING HOME CLICK
   const AnimatedHomeRoundedIcon = m(HomeRoundedIcon);
   const [isHomeAnimatingOut, setIsHomeAnimatingOut] = useState(false);
-
+  
   const usePrevLocation = (location: any) => {
     const prevLocRef = useRef(location);
 
     useEffect(() => {
       prevLocRef.current = location;
     }, [location]);
-
     return prevLocRef.current;
   };
+
   const prevLoc = usePrevLocation(loc);
 
   function handleHomeClick() {
@@ -36,7 +36,6 @@ function HomeButtonContainer(props: any) {
 
   // HANDLING BACK CLICK
   const AnimatedKeyboardBackspaceIcon = m(KeyboardBackspaceIcon);
-
   const [isArrowAnimatingOut, setIsArrowAnimatingOut] = useState(false);
   const isVisible =
     loc.pathname.startsWith("/projects") && loc.pathname !== "/projects";
