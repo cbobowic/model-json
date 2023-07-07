@@ -1,27 +1,10 @@
 import Resizer from "react-image-file-resizer";
-import { ModelState } from "./FileInput";
 import * as tf from "@tensorflow/tfjs";
 import { useRef } from "react";
 import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
+import { ModelState } from "./ModelLoader";
 
-
-async function resizeFile(file: File) {
-  return new Promise((resolve) => {
-    Resizer.imageFileResizer(
-      file,
-      256,
-      256,
-      "JPEG",
-      100,
-      0,
-      (uri) => {
-        resolve(uri);
-      },
-      "file"
-    );
-  });
-}
 
 interface FileUploaderProps {
   onError: (error: Error) => void;
@@ -66,6 +49,23 @@ function FileUploader({
     }
   }
 
+  async function resizeFile(file: File) {
+    return new Promise((resolve) => {
+      Resizer.imageFileResizer(
+        file,
+        256,
+        256,
+        "JPEG",
+        100,
+        0,
+        (uri) => {
+          resolve(uri);
+        },
+        "file"
+      );
+    });
+  }
+
   async function processFile(event: React.ChangeEvent<HTMLInputElement>) {
     setOutputState(ModelState.LOADING);
     const files = event.target.files;
@@ -99,7 +99,6 @@ function FileUploader({
         "Error: The model could not be loaded! This is likely an issue on my end. Please try again later :("
       );
     }
-
     const tensor = tf.browser.fromPixels(img);
     const resized = tf.image.resizeBilinear(tensor, [256, 256]).toFloat();
     tensor.dispose();
@@ -132,7 +131,7 @@ function FileUploader({
       >
         {outputState === ModelState.MODEL_LOADING
           ? "Loading Model"
-          : "Upload image"}
+          : "Upload Image"}
       </Button>
     </>
   );

@@ -10,28 +10,34 @@ enum ModelState {
   MODEL_LOADING,
 }
 
-function useModelLoader() {
+function useModelLoader(onError: (error: Error) => void) {
     const [model, setModel] = useState<tf.GraphModel | null>(null);
     const [outputState, setOutputState] = useState<ModelState>(
       ModelState.MODEL_LOADING
     );
   
     useEffect(() => {
-      async function loadModel() {
-        const newModel = await tf.loadGraphModel(m);
-        setModel(newModel);
-      }
-  
-      if (model === null) {
-        console.log("Loading model...");
+        async function loadModel() {
+          if (model !== null) {
+            return;
+          }
+          try {
+            const newModel = await tf.loadGraphModel(m);
+            setModel(newModel);
+            setOutputState(ModelState.IDLE);
+          } catch {
+            onError(
+              new Error(
+                "Error: The model could not be loaded! This is likely an issue on my end. Please refresh or try again later :("
+              )
+            );
+            setOutputState(ModelState.MODEL_LOADING);
+          }
+        }
+      
         loadModel();
-        console.log("Model loaded!");
-      }
-  
-      if (model !== null && outputState === ModelState.MODEL_LOADING) {
-        setOutputState(ModelState.IDLE);
-      }
-    }, [model, outputState]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+      }, []);
   
     return { model, outputState, setOutputState };
   }

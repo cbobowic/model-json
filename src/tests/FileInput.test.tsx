@@ -5,10 +5,10 @@ import {
   screen,
   waitFor,
 } from "@testing-library/react";
-import FileInput from "../components/file_upload/FileInput";
+import UploadImageToModel from "../components/file_upload/UploadImageToModel";
 
 beforeEach(() => {
-  render(<FileInput onError={testOnError} />);
+  render(<UploadImageToModel onError={testOnError} />);
 });
 
 afterEach(() => {
