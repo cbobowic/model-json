@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import * as tf from "@tensorflow/tfjs";
 import { model as m } from "../../Constants";
 
+/**
+ * Enum for the different states of the model.
+ */
 enum ModelState {
   FAKE,
   REAL,
@@ -10,6 +13,10 @@ enum ModelState {
   MODEL_LOADING,
 }
 
+
+/**
+ * Loads the model once on render and updates output state accordingly.
+ */
 function useModelLoader(onError: (error: Error) => void) {
     const [model, setModel] = useState<tf.GraphModel | null>(null);
     const [outputState, setOutputState] = useState<ModelState>(

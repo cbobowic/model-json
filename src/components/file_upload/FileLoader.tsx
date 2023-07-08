@@ -5,15 +5,20 @@ import Input from "@mui/material/Input";
 import Button from "@mui/material/Button";
 import { ModelState } from "./ModelLoader";
 
-
+/**
+ * Props for the FileUploader component.
+ */
 interface FileUploaderProps {
   onError: (error: Error) => void;
   model: tf.GraphModel | null;
-  outputState: ModelState;
-  setPredictions: React.Dispatch<React.SetStateAction<number[]>>;
-  setOutputState: React.Dispatch<React.SetStateAction<ModelState>>;
+  outputState: ModelState; // model output state enum
+  setPredictions: React.Dispatch<React.SetStateAction<number[]>>; // pred. setter
+  setOutputState: React.Dispatch<React.SetStateAction<ModelState>>; // output setter
 }
 
+/**
+ * Button component for uploading files to tf model.
+ */
 function FileUploader({
   onError,
   model,
@@ -21,6 +26,7 @@ function FileUploader({
   setPredictions,
   setOutputState,
 }: FileUploaderProps) {
+
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   function handleButtonClick() {
@@ -29,6 +35,9 @@ function FileUploader({
     }
   }
 
+  /**
+   * Processes uploaded file and sets the output and predictions.
+   */
   async function handleFileUpload(event: React.ChangeEvent<HTMLInputElement>) {
     try {
       const img = await processFile(event);
@@ -49,6 +58,9 @@ function FileUploader({
     }
   }
 
+  /**
+   * Resize initial image to 256x256 to avoid memory issues on mobile.
+   */
   async function resizeFile(file: File) {
     return new Promise((resolve) => {
       Resizer.imageFileResizer(
@@ -66,6 +78,9 @@ function FileUploader({
     });
   }
 
+  /**
+   * Processes the input and returns an image.
+   */
   async function processFile(event: React.ChangeEvent<HTMLInputElement>) {
     setOutputState(ModelState.LOADING);
     const files = event.target.files;
@@ -91,6 +106,10 @@ function FileUploader({
     return img;
   }
 
+
+  /**
+   * Runs an image through CNN and sets the output and predictions.
+   */
   async function processImage(img: HTMLImageElement) {
     if (model === null) {
       setOutputState(ModelState.MODEL_LOADING);

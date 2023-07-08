@@ -3,11 +3,17 @@ import Backdrop from "@mui/material/Backdrop"
 import CircularProgress from "@mui/material/CircularProgress"
 import { ModelState } from "./ModelLoader"
 
+/**
+ * Props for the ModelUIFeedback component.
+ */
 interface ModelUIFeedbackProps {
     outputState: ModelState;
     predictions: number[];
 }
 
+/**
+ * Handles loading backdrop and output alerts (non-error) for the model.
+ */
 export default function ModelUIFeedback({ outputState, predictions }: ModelUIFeedbackProps) {
 
   function getResultAlertColor() {
