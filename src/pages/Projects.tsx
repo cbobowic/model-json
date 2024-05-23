@@ -37,7 +37,7 @@ function Projects() {
         transition={{ duration: 0.05 }}
         onClick={() => nav("/projects/magnetorquer-parametric-analysis")}
       >
-        Magnetorquer Parametric Analysis
+        Attitude Determination Algorithms 
       </Typography>
       <Divider
         variant="middle"

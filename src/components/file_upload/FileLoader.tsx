@@ -55,6 +55,7 @@ function FileUploader({
       };
     } catch (e) {
       onError(e as Error);
+      setOutputState(ModelState.IDLE);
     }
   }
 
